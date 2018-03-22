@@ -1,0 +1,51 @@
+
+//Z = (X! + (Y-X)!) / 2
+
+#include <iostream>
+using namespace std;
+
+int fact(int);
+
+int main()
+{
+int Z= 0, X=0,Y=0, flag =1;
+char c ;
+do
+{
+
+do
+{
+//factorial for number >= 0
+if (flag == 1)
+cout<<"Please Enter Values of X and Y respectively"<<endl;
+else
+cout<<"Please Enter values again where X < Y and both must be greater than Zero "<<endl;
+
+cout<<"X = ";
+cin>>X;
+cout<<X<<endl;
+cout<<endl<<"Y = ";
+cin>>Y;
+cout<<Y<<endl;
+++flag;
+}
+
+while ((Y < X) || (X < 0) || (Y < 0));
+
+Z= (fact(X) + fact(Y - X))/2;
+cout<< "Z = "<< Z<<endl;
+cout<<"Do you want to repeat this program Y/N "<<endl;
+cin>>c;
+}
+while(c == 'y' || c == 'Y');
+return 0;
+}
+
+int fact(int x)
+{
+
+int f = 1;
+for(int i=1; i<=x; i++)
+f=f*i;
+return f;
+}
